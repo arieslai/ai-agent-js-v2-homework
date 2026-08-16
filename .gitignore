@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+.history/
+src/homework-03-mini-knowledge-base/data/vectors.json
+ref/
+*.log
+
+# 課程／公司相關壓縮檔，不進版控（檔案保留在本機）
+docs/*.zip
+.DS_Store
+Thumbs.db

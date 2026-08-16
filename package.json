@@ -1,0 +1,28 @@
+{
+  "name": "ai-agent-js-v2-homework",
+  "version": "1.0.0",
+  "description": "AI Agent 開發實戰課程 - 課後作業（A）5 題實作",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "hw1": "node src/homework-01-role-chatbot/index.js",
+    "hw2": "node src/homework-02-calculator-tool/index.js",
+    "hw3": "node src/homework-03-mini-knowledge-base/index.js",
+    "hw3:seed": "node src/homework-03-mini-knowledge-base/seed.js",
+    "hw4": "node src/homework-04-weather-time-assistant/index.js",
+    "hw5": "node src/homework-05-similarity-lab/index.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.3",
+    "@qdrant/js-client-rest": "^1.18.0",
+    "dotenv": "^17.4.2",
+    "lowdb": "^7.0.1",
+    "openai": "^6.38.0",
+    "ora": "^9.4.0",
+    "zod": "^4.4.3"
+  }
+}
