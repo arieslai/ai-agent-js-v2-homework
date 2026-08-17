@@ -97,29 +97,50 @@ npm run hw2
 ```text
 計算機助理（輸入 exit 離開）
 
-✔ 你： 3 的 4 次方加 10 是多少？
+√ 你： 10 + 5 * 2 等於多少？
 思考中...
-[呼叫 tool] calculate({"expression":"3^4+10"}) -> {"ok":true,"expression":"3^4+10","result":91}
+[呼叫 tool] calculate({"expression":"10+5*2"}) -> {"ok":true,"expression":"10+5*2","result":20}
 
-助理：3⁴ + 10 = 91。
+助理：10 + 5 × 2 = 20。
 
-✔ 你： 剛剛的結果再乘以 2
+√ 你： 一件外套原價 2580 元，打八折後再折 200，最後多少錢？
 思考中...
-[呼叫 tool] calculate({"expression":"91*2"}) -> {"ok":true,"expression":"91*2","result":182}
+[呼叫 tool] calculate({"expression":"2580*0.8-200"}) -> {"ok":true,"expression":"2580*0.8-200","result":1864}
 
-助理：91 × 2 = 182。
+助理：算式：2580 × 0.8 − 200 = **1864 元**。
 
-✔ 你： 把 5 除以 0
+√ 你： (1+2)*3 和 2^10 分別是多少？
 思考中...
-[呼叫 tool] calculate({"expression":"5/0"}) -> {"ok":false,"expression":"5/0","error":"除數不可為 0"}
+[呼叫 tool] calculate({"expression":"(1+2)*3"}) -> {"ok":true,"expression":"(1+2)*3","result":9}
+[呼叫 tool] calculate({"expression":"2^10"}) -> {"ok":true,"expression":"2^10","result":1024}
 
-助理：5 ÷ 0 無定義，因為除數不可為 0。
+助理：(1 + 2) × 3 = **9**；2^10 = **1024**。
 
-✔ 你： exit
+√ 你： 幫我算 12345678 * 87654321
+思考中...
+[呼叫 tool] calculate({"expression":"12345678*87654321"}) -> {"ok":true,"expression":"12345678*87654321","result":1082152022374638}
+
+助理：12345678 × 87654321 = **1082152022374638**。
+
+√ 你： 把 1 除以 0 算給我看
+思考中...
+[呼叫 tool] calculate({"expression":"1/0"}) -> {"ok":false,"expression":"1/0","error":"除數不可為 0"}
+
+助理：1 ÷ 0 無定義，因為除數不可為 0。
+
+√ 你： 剛剛那件外套的價格，再加 5% 運費是多少？
+思考中...
+[呼叫 tool] calculate({"expression":"1864*1.05"}) -> {"ok":true,"expression":"1864*1.05","result":1957.2}
+
+助理：算式：1864 × 1.05 = **1957.2 元**。
+
+√ 你： exit
 再會~
 ```
 
-> 截圖佔位：`docs/images/hw2-tool-calling.png`（待補上實際 CLI 執行截圖）
+實際 CLI 執行截圖：
+
+![hw2 tool calling 截圖](../../docs/images/hw2-tool-calling.png)
 
 ### 詳細對話紀錄
 
