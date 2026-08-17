@@ -1,0 +1,105 @@
+{
+  "recordedAt": "2026-08-17T08:35:53.990Z",
+  "developerPrompt": "你是一位數學助理。任何需要計算的地方都必須呼叫 calculate 工具，不可自行心算或估算。\n使用者若用自然語言描述（例如「三成」「打八折」），請先轉換成運算式再交給工具。\n工具回傳 ok=false 時，請根據 error 訊息修正運算式後重新呼叫，最多嘗試兩次。\n回答時用一句話說明算式與結果，不要輸出多餘的推理過程。",
+  "turns": [
+    {
+      "user": "10 + 5 * 2 等於多少？",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"10+5*2\"}",
+          "result": {
+            "ok": true,
+            "expression": "10+5*2",
+            "result": 20
+          }
+        }
+      ],
+      "assistant": "10 + 5 × 2 = 20。"
+    },
+    {
+      "user": "一件外套原價 2580 元，打八折後再折 200，最後多少錢？",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"2580*0.8-200\"}",
+          "result": {
+            "ok": true,
+            "expression": "2580*0.8-200",
+            "result": 1864
+          }
+        }
+      ],
+      "assistant": "2580 × 0.8 − 200 = 1864 元。"
+    },
+    {
+      "user": "(1+2)*3 和 2^10 分別是多少？",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"(1+2)*3\"}",
+          "result": {
+            "ok": true,
+            "expression": "(1+2)*3",
+            "result": 9
+          }
+        },
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"2^10\"}",
+          "result": {
+            "ok": true,
+            "expression": "2^10",
+            "result": 1024
+          }
+        }
+      ],
+      "assistant": "(1 + 2) × 3 = 9；2^10 = 1024。"
+    },
+    {
+      "user": "幫我算 12345678 * 87654321",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"12345678*87654321\"}",
+          "result": {
+            "ok": true,
+            "expression": "12345678*87654321",
+            "result": 1082152022374638
+          }
+        }
+      ],
+      "assistant": "12,345,678 × 87,654,321 = 1,082,152,022,374,638。"
+    },
+    {
+      "user": "把 1 除以 0 算給我看",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"1/0\"}",
+          "result": {
+            "ok": false,
+            "expression": "1/0",
+            "error": "除數不可為 0"
+          }
+        }
+      ],
+      "assistant": "1 ÷ 0 沒有定義，因為除數不可為 0。"
+    },
+    {
+      "user": "剛剛那件外套的價格，再加 5% 運費是多少？",
+      "toolCalls": [
+        {
+          "name": "calculate",
+          "arguments": "{\"expression\":\"1864*1.05\"}",
+          "result": {
+            "ok": true,
+            "expression": "1864*1.05",
+            "result": 1957.2
+          }
+        }
+      ],
+      "assistant": "外套折後價格加 5% 運費：1864 × 1.05 = 1957.2 元。"
+    }
+  ]
+}

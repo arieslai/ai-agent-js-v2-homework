@@ -5,6 +5,7 @@
 目前已整理完成的內容：
 
 - `src/homework-01-role-chatbot/README.md`：作業 1「打造專屬角色聊天機器人」完整說明
+- `src/homework-02-calculator-tool/README.md`：作業 2「新增一個 Function Calling 工具」完整說明
 
 ## 專案結構
 
@@ -18,10 +19,24 @@
     │   ├── index.js
     │   ├── README.md
     │   └── demo-conversation-memory.json
+    ├── homework-02-calculator-tool/
+    │   ├── index.js
+    │   ├── README.md
+    │   ├── demo-tool-calling.json
+    │   ├── lib/
+    │   │   ├── chat-manager.js
+    │   │   ├── parser.js
+    │   │   └── tokenizer.js
+    │   └── tools/
+    │       ├── calculate.js
+    │       └── index.js
     └── shared/
         ├── config.js
         ├── db/message.js
-        └── lib/openai.js
+        ├── lib/openai.js
+        └── utils/
+            ├── func-tool.js
+            └── spinner.js
 ```
 
 ## 已完成作業
@@ -31,6 +46,12 @@
 - 主題：冷笑話機器人
 - 特色：繁體中文、資深前輩口吻、帶吐槽感的冷笑話風格
 - 詳細說明：[`src/homework-01-role-chatbot/README.md`](src/homework-01-role-chatbot/README.md)
+
+### 作業 2：新增一個 Function Calling 工具
+
+- 主題：計算機工具 `calculate`
+- 特色：不使用 `eval()`，改以自行實作的 tokenizer + 遞迴下降 parser 求值
+- 詳細說明：[`src/homework-02-calculator-tool/README.md`](src/homework-02-calculator-tool/README.md)
 
 ## 執行方式
 
@@ -48,10 +69,11 @@ cp .env.example .env
 
 3. 在 `.env` 中填入 `OPENAI_API_KEY`
 
-4. 執行第一題
+4. 執行各題
 
 ```bash
 npm run hw1
+npm run hw2
 ```
 
 ## 環境變數
