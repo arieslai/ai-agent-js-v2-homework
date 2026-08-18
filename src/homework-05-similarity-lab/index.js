@@ -42,6 +42,15 @@ async function main() {
   );
 
   const averages = splitByGroup(vectors).map(reportGroup);
+  console.log("\n=== 結論 ===");
+  averages.forEach((avg, idx) =>
+    console.log(`第 ${idx + 1} 組平均：${avg.toFixed(3)}`)
+  );
+
+  const verdict = averages[0] > averages[1] ? "符合預期" : "不符預期";
+  console.log(
+    `第 1 組（意思相近）${averages[0].toFixed(3)} > 第 2 組（意思不同）${averages[1].toFixed(3)}？ ${verdict}`
+  );
 }
 
 main().catch((err) => {
