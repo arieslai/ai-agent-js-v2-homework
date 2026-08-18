@@ -6,6 +6,7 @@
 
 - `src/homework-01-role-chatbot/README.md`：作業 1「打造專屬角色聊天機器人」完整說明
 - `src/homework-02-calculator-tool/README.md`：作業 2「新增一個 Function Calling 工具」完整說明
+- `src/homework-04-weather-time-assistant/README.md`：作業 4「整合天氣與時間工具」完整說明
 - `src/homework-05-similarity-lab/README.md`：作業 5「向量相似度實驗」完整說明
 
 ## 專案結構
@@ -31,6 +32,14 @@
     │   └── tools/
     │       ├── calculate.js
     │       └── index.js
+    ├── homework-04-weather-time-assistant/
+    │   ├── index.js
+    │   ├── README.md
+    │   ├── demo-tool-calling.json
+    │   ├── lib/
+    │   │   └── chat-manager.js
+    │   └── tools/
+    │       └── index.js
     ├── homework-05-similarity-lab/
     │   ├── index.js
     │   ├── README.md
@@ -44,6 +53,9 @@
         ├── lib/
         │   ├── openai.js
         │   └── embeddings.js
+        ├── tools/
+        │   ├── current_time.js
+        │   └── weather.js
         └── utils/
             ├── func-tool.js
             └── spinner.js
@@ -62,6 +74,12 @@
 - 主題：計算機工具 `calculate`
 - 特色：不使用 `eval()`，改以自行實作的 tokenizer + 遞迴下降 parser 求值
 - 詳細說明：[`src/homework-02-calculator-tool/README.md`](src/homework-02-calculator-tool/README.md)
+
+### 作業 4：整合天氣與時間工具
+
+- 主題：同時註冊時間工具 `get_current_time` 與天氣工具 `get_weather`
+- 特色：同一輪可呼叫多個工具，能把時間與天氣整合成一段回覆
+- 詳細說明：[`src/homework-04-weather-time-assistant/README.md`](src/homework-04-weather-time-assistant/README.md)
 
 ### 作業 5：向量相似度實驗
 
@@ -83,13 +101,14 @@ npm install
 cp .env.example .env
 ```
 
-3. 在 `.env` 中填入 `OPENAI_API_KEY`
+3. 在 `.env` 中填入 `OPENAI_API_KEY`（作業 4 另需 `OPENWEATHER_API_KEY`）
 
 4. 執行各題
 
 ```bash
 npm run hw1
 npm run hw2
+npm run hw4
 npm run hw5
 ```
 
