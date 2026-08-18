@@ -15,6 +15,7 @@
 | --- | --- |
 | `../shared/lib/embeddings.js` | Embeddings 相關程式（`embedAll` / `embed` / `EMBEDDING_MODEL`） |
 | `../shared/lib/openai.js` | 共用的 OpenAI client |
+| `../shared/utils/spinner.js` | 共用的 ora spinner 包裝（取向量時顯示進度） |
 | `similarity.js` | 相似度計算（cosine、兩兩組合、平均） |
 | `data/test-groups.js` | 3 組測試文字與預期說明 |
 | `index.js` | 相似度測試主程式 |
