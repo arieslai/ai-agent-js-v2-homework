@@ -9,7 +9,7 @@ const chat = createChatManager({
   },
 });
 
-console.log("計算機助理（輸入 exit 離開）\n");
+console.log("天氣與時間小幫手（輸入 exit 離開）\n");
 
 try {
   while (true) {
