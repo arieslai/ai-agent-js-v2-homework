@@ -2,7 +2,6 @@ node_modules/
 .env
 .env.local
 .history/
-src/homework-03-mini-knowledge-base/data/vectors.json
 ref/
 *.log
 

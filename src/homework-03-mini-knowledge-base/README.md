@@ -42,21 +42,29 @@ npm install
 cp .env.example .env
 ```
 
-3. 在 `.env` 填入 `OPENAI_API_KEY`，並設定可連線的 Qdrant（`QDRANT_URL`，雲端服務另需 `QDRANT_API_KEY`）
+3. 啟動 Qdrant（本題的向量資料庫，需可連線才能執行）
 
-4. 初始化知識庫（資料有變動時才需重跑）
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
+
+也可改用 [Qdrant Cloud](https://cloud.qdrant.io)，此時 `QDRANT_URL` 填叢集網址並另外設定 `QDRANT_API_KEY`。
+
+4. 在 `.env` 填入 `OPENAI_API_KEY`，並確認 `QDRANT_URL`（本機 Docker 為 `http://localhost:6333`，`QDRANT_API_KEY` 留空即可）
+
+5. 初始化知識庫（資料有變動時才需重跑）
 
 ```bash
 npm run hw3:seed
 ```
 
-5. 執行 3 種問法的搜尋測試
+6. 執行 3 種問法的搜尋測試
 
 ```bash
 npm run hw3:test
 ```
 
-6. 互動式搜尋（可自由輸入問題，輸入 `exit` 離開）
+7. 互動式搜尋（可自由輸入問題，輸入 `exit` 離開）
 
 ```bash
 npm run hw3

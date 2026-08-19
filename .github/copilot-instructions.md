@@ -46,11 +46,9 @@
 - 以根目錄 `.env.example` 作為所有作業環境變數名稱的唯一來源。真正的金鑰放在 `.env`（已 gitignore）。主要環境變數：
   - `OPENAI_API_KEY` — 所有作業皆需要
   - `OPENWEATHER_API_KEY` — 作業 4
-  - `VECTOR_STORE` — 作業 3；設為 `local`（預設，存成本機 JSON）或 `qdrant`
-  - `QDRANT_URL` / `QDRANT_API_KEY` — 僅在 `VECTOR_STORE=qdrant` 時需要
+  - `QDRANT_URL` / `QDRANT_API_KEY` — 作業 3；向量資料庫一律使用 Qdrant，本機 Docker 時 `QDRANT_API_KEY` 留空
 - 對話紀錄與其他本地執行產物存於磁碟並被 git 忽略：
   - `.history/` 存放對話 JSON 檔
-  - `src/homework-03-mini-knowledge-base/data/vectors.json` 為本地向量資料庫
 - 作業 1 的記憶流程依靠每輪將完整訊息歷史傳回模型。若修改對話行為，需同時檢查 `src/homework-01-role-chatbot/index.js` 和 `src/shared/db/message.js`。
 - 根目錄文件保持高層概述。詳細的作業對話紀錄與驗收證據放在各題自己的 `README.md`。
 - `package.json` 中已有的依賴：`openai`、`@inquirer/prompts`、`lowdb`、`ora`、`zod`、`dotenv`、`@qdrant/js-client-rest`。除非現有依賴無法滿足需求，否則不要新增。

@@ -120,7 +120,7 @@ npm install
 cp .env.example .env
 ```
 
-3. 在 `.env` 中填入 `OPENAI_API_KEY`（作業 3 另需 `QDRANT_URL`；作業 4 另需 `OPENWEATHER_API_KEY`）
+3. 在 `.env` 中填入 `OPENAI_API_KEY`（作業 3 另需可連線的 Qdrant，見 `QDRANT_URL`；作業 4 另需 `OPENWEATHER_API_KEY`）
 
 4. 執行各題
 
