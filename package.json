@@ -12,6 +12,7 @@
     "hw2": "node src/homework-02-calculator-tool/index.js",
     "hw3": "node src/homework-03-mini-knowledge-base/index.js",
     "hw3:seed": "node src/homework-03-mini-knowledge-base/seed.js",
+    "hw3:test": "node src/homework-03-mini-knowledge-base/search-test.js",
     "hw4": "node src/homework-04-weather-time-assistant/index.js",
     "hw5": "node src/homework-05-similarity-lab/index.js",
     "test": "node --test test/"

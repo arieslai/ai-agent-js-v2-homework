@@ -1,6 +1,5 @@
 import { QdrantClient } from "@qdrant/js-client-rest";
 import { QDRANT_URL, QDRANT_API_KEY } from "../config.js";
-import { embed } from "./embeddings.js";
 
 export const qdrant = new QdrantClient({
   url: QDRANT_URL,
@@ -10,9 +9,12 @@ export const qdrant = new QdrantClient({
 
 export const EMBEDDING_DIM = 1536;
 
+export async function collectionExists(collectionName) {
+  return (await qdrant.collectionExists(collectionName)).exists;
+}
+
 export async function recreateCollection(collectionName) {
-  const exists = await qdrant.collectionExists(collectionName);
-  if (exists.exists) {
+  if ((await collectionExists(collectionName))) {
     await qdrant.deleteCollection(collectionName);
   }
   await qdrant.createCollection(collectionName, {
@@ -20,20 +22,14 @@ export async function recreateCollection(collectionName) {
   });
 }
 
-export async function searchTaiwanCities(query, limit = 5) {
-  const vector = await embed(query);
-
-  const results = await qdrant.query("taiwan_cities", {
+export async function search(collectionName, vector, limit) {
+  return (await qdrant.query(collectionName, {
     query: vector,
     limit,
     with_payload: true,
-  });
-
-  return results.points.map((r) => ({
-    score: r.score,
-    id: r.payload.id,
-    city: r.payload.city,
-    tags: r.payload.tags,
-    description: r.payload.description,
   }));
+}
+
+export async function upsertPoints(collectionName, points) {
+  await qdrant.upsert(collectionName, { wait: true, points });
 }

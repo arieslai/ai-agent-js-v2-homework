@@ -6,6 +6,7 @@
 
 - `src/homework-01-role-chatbot/README.md`：作業 1「打造專屬角色聊天機器人」完整說明
 - `src/homework-02-calculator-tool/README.md`：作業 2「新增一個 Function Calling 工具」完整說明
+- `src/homework-03-mini-knowledge-base/README.md`：作業 3「建立迷你知識庫」完整說明
 - `src/homework-04-weather-time-assistant/README.md`：作業 4「整合天氣與時間工具」完整說明
 - `src/homework-05-similarity-lab/README.md`：作業 5「向量相似度實驗」完整說明
 
@@ -32,6 +33,17 @@
     │   └── tools/
     │       ├── calculate.js
     │       └── index.js
+    ├── homework-03-mini-knowledge-base/
+    │   ├── index.js
+    │   ├── README.md
+    │   ├── seed.js
+    │   ├── search-test.js
+    │   ├── demo-search-run.txt
+    │   ├── lib/
+    │   │   └── store.js
+    │   └── data/
+    │       ├── taiwan-cites.js
+    │       └── queries.js
     ├── homework-04-weather-time-assistant/
     │   ├── index.js
     │   ├── README.md
@@ -52,7 +64,8 @@
         ├── db/message.js
         ├── lib/
         │   ├── openai.js
-        │   └── embeddings.js
+        │   ├── embeddings.js
+        │   └── qdrant.js
         ├── tools/
         │   ├── current_time.js
         │   └── weather.js
@@ -74,6 +87,12 @@
 - 主題：計算機工具 `calculate`
 - 特色：不使用 `eval()`，改以自行實作的 tokenizer + 遞迴下降 parser 求值
 - 詳細說明：[`src/homework-02-calculator-tool/README.md`](src/homework-02-calculator-tool/README.md)
+
+### 作業 3：建立迷你知識庫
+
+- 主題：台灣城市介紹（台北、台中、高雄、台南、花蓮共 5 筆）
+- 特色：Embeddings + Qdrant 向量搜尋，3 種問法均不含城市名仍能命中預期城市
+- 詳細說明：[`src/homework-03-mini-knowledge-base/README.md`](src/homework-03-mini-knowledge-base/README.md)
 
 ### 作業 4：整合天氣與時間工具
 
@@ -101,13 +120,16 @@ npm install
 cp .env.example .env
 ```
 
-3. 在 `.env` 中填入 `OPENAI_API_KEY`（作業 4 另需 `OPENWEATHER_API_KEY`）
+3. 在 `.env` 中填入 `OPENAI_API_KEY`（作業 3 另需 `QDRANT_URL`；作業 4 另需 `OPENWEATHER_API_KEY`）
 
 4. 執行各題
 
 ```bash
 npm run hw1
 npm run hw2
+npm run hw3:seed   # 作業 3 需先初始化知識庫
+npm run hw3:test   # 3 種問法的搜尋測試
+npm run hw3        # 互動式搜尋
 npm run hw4
 npm run hw5
 ```

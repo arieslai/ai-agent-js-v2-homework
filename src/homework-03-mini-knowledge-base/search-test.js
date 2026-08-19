@@ -1,6 +1,6 @@
 import { spinner } from "../shared/utils/spinner.js"
 import { collectionExists } from "../shared/lib/qdrant.js";
-import { input } from "@inquirer/prompts";
+import { queries } from "./data/queries.js";
 import { COLLECTION_NAME, searchTaiwanCities } from "./lib/store.js";
 
 async function main() {
@@ -9,21 +9,12 @@ async function main() {
     process.exit(1);
   }
 
-  while (true) {
-    const query = (
-      await input({ message: "請輸入要搜尋的城市內容：" })
-    ).trim();
-
-    if (query === "") continue;
-    if (query.toLowerCase() === "exit") {
-      console.log("再會~");
-      break;
-    }
-
-    const spin = spinner("搜尋中...").start();
-    const results = await searchTaiwanCities(query, 2);
+  for (const [idx, query] of queries.entries()) {
+    const spin = spinner(`搜尋中：${query.input}`).start();
+    const results = await searchTaiwanCities(query.input, 3);
     spin.stop();
 
+    console.log(`問法${idx + 1}：${query.input}，預期：${query.expectation}，搜尋結果：`);
     for (const [i, r] of results.entries()) {
       console.log(`\n${i + 1}. ${r.city} (${r.tags})`);
       console.log(`   分數：${r.score.toFixed(3)}`);
@@ -34,9 +25,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  if (err.name === "ExitPromptError") {
-    console.log("\n再會~");
-  } else {
-    throw err;
-  }
+  console.error(err);
+  process.exit(1);
 });
