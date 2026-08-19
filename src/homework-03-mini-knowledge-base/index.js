@@ -21,7 +21,7 @@ async function main() {
     }
 
     const spin = spinner("搜尋中...").start();
-    const results = await searchTaiwanCities(query, 2);
+    const results = await searchTaiwanCities(query, 3);
     spin.stop();
 
     for (const [i, r] of results.entries()) {
