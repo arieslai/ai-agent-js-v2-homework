@@ -42,7 +42,7 @@
     │   ├── lib/
     │   │   └── store.js
     │   └── data/
-    │       ├── taiwan-cites.js
+    │       ├── taiwan-cities.js
     │       └── queries.js
     ├── homework-04-weather-time-assistant/
     │   ├── index.js

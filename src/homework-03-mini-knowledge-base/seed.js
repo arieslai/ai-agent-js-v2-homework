@@ -2,7 +2,7 @@ import { COLLECTION_NAME } from "./lib/store.js";
 import { recreateCollection, upsertPoints } from "../shared/lib/qdrant.js";
 import { spinner } from "../shared/utils/spinner.js";
 import { embedAll, EMBEDDING_MODEL } from "../shared/lib/embeddings.js";
-import { cities } from "./data/taiwan-cites.js";
+import { cities } from "./data/taiwan-cities.js";
 
 function rowToText(row) {
   return [

@@ -21,7 +21,7 @@
 | `../shared/lib/openai.js` | 共用的 OpenAI client |
 | `../shared/utils/spinner.js` | 共用的 ora spinner 包裝 |
 | `lib/store.js` | 本題專屬封裝：collection 名稱 `taiwan_cities` 與 `searchTaiwanCities` |
-| `data/taiwan-cites.js` | 知識庫資料：5 個台灣城市的簡介與標籤 |
+| `data/taiwan-cities.js` | 知識庫資料：5 個台灣城市的簡介與標籤 |
 | `data/queries.js` | 3 種測試問法與各自的預期城市 |
 | `seed.js` | 知識庫初始化程式 |
 | `search-test.js` | 搜尋測試程式（3 種問法） |
@@ -125,7 +125,7 @@ collection 名稱：`taiwan_cities`，距離度量 `Cosine`，向量維度 1536�
 
 ## 驗收對照
 
-- **知識庫包含 5 筆以上資料**：有，5 筆台灣城市資料（`data/taiwan-cites.js`），`npm run hw3:seed` 輸出「Seed 完成（筆數：5）！」
+- **知識庫包含 5 筆以上資料**：有，5 筆台灣城市資料（`data/taiwan-cities.js`），`npm run hw3:seed` 輸出「Seed 完成（筆數：5）！」
 - **執行搜尋測試程式能搜尋到相關結果**：有，`npm run hw3:test` 的 3 個查詢均命中預期城市
 - **README 附 3 個查詢的實際搜尋結果（含相似度分數）**：有，見上方「測試結果」三張表格與「結果分析」
 
