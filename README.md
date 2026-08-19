@@ -17,6 +17,11 @@
 ├── README.md
 ├── .env.example
 ├── package.json
+├── docs/
+│   ├── plan.md
+│   ├── 課後作業(A).pdf
+│   └── images/
+│       └── hw2-tool-calling.png
 └── src/
     ├── homework-01-role-chatbot/
     │   ├── index.js

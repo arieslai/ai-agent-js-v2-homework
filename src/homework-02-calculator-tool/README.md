@@ -215,9 +215,9 @@ npm run hw2
 
 - **計算機工具包含完整的工具定義和實作**：有，定義在 `tools/calculate.js`，實作在 `lib/parser.js` 與 `lib/tokenizer.js`
 - **JSON Schema 定義正確（type、function、parameters）**：有，見上方實際產生的定義
-- **AI 能在對話中正確呼叫計算機**：有，`demo-tool-calling.json` 記錄 6 輪對話共 7 次工具呼叫，另附 CLI 實際執行輸出（截圖待補）
+- **AI 能在對話中正確呼叫計算機**：有，`demo-tool-calling.json` 記錄 6 輪對話共 7 次工具呼叫，另附 CLI 實際執行輸出與截圖
 - **計算結果正確**：有，含大數與浮點案例皆驗證正確
 
 ## 備註
 
-`demo-tool-calling.json` 由實際呼叫 OpenAI API 產生，非手動編造。README 中的截圖連結目前為佔位，實際 CLI 截圖補上後即可替換。
+`demo-tool-calling.json` 由實際呼叫 OpenAI API 產生，非手動編造。README 中的 CLI 執行輸出與截圖亦來自同一次實際執行。
