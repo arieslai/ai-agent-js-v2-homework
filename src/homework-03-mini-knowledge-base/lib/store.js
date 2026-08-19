@@ -8,7 +8,6 @@ export async function searchTaiwanCities(query, limit = 5) {
   const results = await search(COLLECTION_NAME, vector, limit);
   return results.points.map((r) => ({
     score: r.score,
-    id: r.payload.id,
     city: r.payload.city,
     tags: r.payload.tags,
     description: r.payload.description,
