@@ -6,9 +6,8 @@ import { cities } from "./data/taiwan-cities.js";
 
 function rowToText(row) {
   return [
-    row.id,
     row.city,
-    row.tags,
+    row.tags.join("、"),
     row.description,
   ]
     .filter(Boolean)
@@ -32,7 +31,6 @@ async function main() {
     id: idx,
     vector: vectors[idx],
     payload: {
-      id: row.id,
       city: row.city,
       tags: row.tags,
       description: row.description,
