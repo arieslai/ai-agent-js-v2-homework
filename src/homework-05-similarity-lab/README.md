@@ -5,7 +5,7 @@
 ## 實作內容
 
 - **Embeddings 程式**：`../shared/lib/embeddings.js` 使用共用的 OpenAI client，一次把多句送進 `text-embedding-3-small` 取得向量（1536 維）
-- **相似度程式**：`similarity.js` 實作 `pairIndices`（產生兩兩組合）、`cosineSimilarity`（餘弦相似度）與 `average`（平均分數）
+- **相似度程式**：`similarity.js` 實作 `pairIndices`（產生兩兩組合）、`cosineSimilarity`（餘弦相似度）、`pairwiseSimilarity`（對一組向量算出全部兩兩分數，主程式實際呼叫的函式）與 `average`（平均分數）
 - **測試資料**：`data/test-groups.js` 定義 3 組 × 3 句，每組附上 `expectation` 說明預期結果
 - **主程式**：`index.js` 送出全部 9 句、依組切分向量，逐組印出兩兩相似度與平均值
 

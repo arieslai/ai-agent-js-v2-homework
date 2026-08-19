@@ -58,7 +58,6 @@ npm run hw2
 {
   "type": "function",
   "name": "calculate",
-  "description": "進行數學計算",
   "parameters": {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
@@ -73,7 +72,8 @@ npm run hw2
     "required": ["expression"],
     "additionalProperties": false
   },
-  "strict": true
+  "strict": true,
+  "description": "進行數學計算"
 }
 ```
 

@@ -55,14 +55,15 @@ npm run hw4
 {
   "type": "function",
   "name": "get_current_time",
-  "description": "取得現在的台灣時間",
   "parameters": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {},
-    "required": [],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "required": []
   },
-  "strict": true
+  "strict": true,
+  "description": "取得現在的台灣時間"
 }
 ```
 
@@ -70,8 +71,8 @@ npm run hw4
 {
   "type": "function",
   "name": "get_weather",
-  "description": "取得指定城市的即時天氣資訊，包括溫度、濕度、天氣狀況等。",
   "parameters": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
       "city": {
@@ -82,7 +83,8 @@ npm run hw4
     "required": ["city"],
     "additionalProperties": false
   },
-  "strict": true
+  "strict": true,
+  "description": "取得指定城市的即時天氣資訊，包括溫度、濕度、天氣狀況等。"
 }
 ```
 
